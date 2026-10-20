@@ -1,0 +1,1453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171513">
+
+<title>Velvet & Blade | Unisex Hair Studio</title>
+
+<meta name="description" content="Velvet & Blade is a fictional premium unisex salon website concept featuring men's cuts, braids, wigs, dreadlocks, styling and booking enquiries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#171513;
+  --dark:#24201d;
+  --gold:#c7a477;
+  --cream:#f7f3ec;
+  --white:#fff;
+  --muted:#77716a;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--cream);
+  color:var(--black);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+}
+
+a { color:inherit; text-decoration:none; }
+
+img {
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+
+h1,h2,h3 {
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  line-height:1.2;
+}
+
+button,input,select,textarea {
+  font:inherit;
+}
+
+button { cursor:pointer; }
+
+.demo {
+  padding:9px 15px;
+  background:#e8d8c1;
+  color:#403223;
+  text-align:center;
+  font-size:11px;
+}
+
+header {
+  position:absolute;
+  top:35px;
+  left:0;
+  width:100%;
+  z-index:10;
+  padding:24px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  color:white;
+}
+
+.logo {
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  letter-spacing:2px;
+  line-height:1.1;
+}
+
+.logo span {
+  display:block;
+  margin-top:7px;
+  font:600 9px 'DM Sans',sans-serif;
+  letter-spacing:4px;
+  text-align:center;
+  color:var(--gold);
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:21px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+nav a:hover { color:var(--gold); }
+
+.nav-book {
+  padding:10px 16px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+}
+
+.hero {
+  position:relative;
+  min-height:630px;
+  height:100svh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.hero video {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.58),
+    rgba(0,0,0,.30) 42%,
+    rgba(0,0,0,.72)
+  );
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  padding:25px;
+  animation:rise 1.3s ease both;
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-size:clamp(48px,9vw,108px);
+  line-height:1.05;
+  margin-bottom:21px;
+}
+
+.hero h1 em {
+  color:#e5c9a1;
+  font-weight:400;
+}
+
+.hero-content p {
+  font-size:12px;
+  letter-spacing:3px;
+  margin-bottom:32px;
+}
+
+.hero-actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn {
+  display:inline-block;
+  border:1px solid var(--gold);
+  padding:15px 23px;
+  background:var(--gold);
+  color:var(--black);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-align:center;
+  transition:.25s;
+}
+
+.btn:hover {
+  background:white;
+  border-color:white;
+}
+
+.btn-outline {
+  background:transparent;
+  color:white;
+  border-color:white;
+}
+
+.scroll {
+  position:absolute;
+  bottom:27px;
+  z-index:3;
+  color:white;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+section { padding:95px 8%; }
+
+.heading {
+  max-width:750px;
+  margin:0 auto 45px;
+  text-align:center;
+}
+
+.heading h2 {
+  font-size:clamp(36px,5vw,57px);
+  margin-bottom:17px;
+}
+
+.heading p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.intro {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.intro img { height:470px; }
+
+.intro h2 {
+  font-size:clamp(36px,5vw,54px);
+  margin-bottom:22px;
+}
+
+.intro p {
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:22px;
+}
+
+.services {
+  background:var(--dark);
+  color:white;
+}
+
+.services .heading p { color:#c5bdb4; }
+
+.service-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service-card {
+  background:#342e29;
+  overflow:hidden;
+}
+
+.service-card img { height:210px; }
+
+.service-card div { padding:23px; }
+
+.service-card h3 {
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.service-card p {
+  color:#d2c7bc;
+  font-size:12px;
+}
+
+.prices {
+  background:#eee8df;
+}
+
+.price-tabs,
+.gallery-tabs {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.tab {
+  padding:12px 23px;
+  background:transparent;
+  border:1px solid #a99c8d;
+  color:var(--black);
+  font-size:12px;
+  font-weight:700;
+}
+
+.tab.active {
+  background:var(--black);
+  border-color:var(--black);
+  color:white;
+}
+
+.price-panel { display:none; }
+
+.price-panel.active { display:block; }
+
+.price-list {
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:25px 35px;
+}
+
+.price-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid #e8e4de;
+  padding:14px 0;
+  font-size:13px;
+}
+
+.price-row:last-child { border-bottom:none; }
+
+.price-row strong {
+  color:#98703f;
+  white-space:nowrap;
+}
+
+.price-note {
+  max-width:850px;
+  margin:23px auto 0;
+  font-size:12px;
+  color:#665b4d;
+  text-align:center;
+}
+
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+}
+
+.gallery-item {
+  position:relative;
+  overflow:hidden;
+  background:var(--dark);
+}
+
+.gallery-item img {
+  height:280px;
+  transition:transform .35s;
+}
+
+.gallery-item:hover img { transform:scale(1.04); }
+
+.gallery-item span {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:35px 15px 13px;
+  color:white;
+  font-size:12px;
+  font-weight:700;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.gallery-item.hidden { display:none; }
+
+.compare-section {
+  background:var(--dark);
+  color:white;
+}
+
+.compare-section .heading p { color:#c8c0b8; }
+
+.comparison {
+  position:relative;
+  max-width:850px;
+  height:460px;
+  margin:auto;
+  overflow:hidden;
+  background:#333;
+  --position:50%;
+}
+
+.comparison img {
+  position:absolute;
+  inset:0;
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
+
+.comparison .before {
+  clip-path:inset(0 calc(100% - var(--position)) 0 0);
+}
+
+.comparison .line {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:var(--position);
+  width:3px;
+  transform:translateX(-50%);
+  background:white;
+  pointer-events:none;
+}
+
+.comparison .handle {
+  position:absolute;
+  top:50%;
+  left:var(--position);
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:white;
+  color:black;
+  padding:12px;
+  font-size:15px;
+  pointer-events:none;
+}
+
+.comparison .tag {
+  position:absolute;
+  top:20px;
+  padding:8px 12px;
+  background:#0009;
+  color:white;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.tag-before { left:18px; }
+.tag-after { right:18px; }
+
+.comparison input {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  opacity:0;
+  cursor:ew-resize;
+}
+
+.compare-note {
+  text-align:center;
+  font-size:11px;
+  color:#d3c8bb;
+  margin-top:18px;
+}
+
+.trust-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.trust-card {
+  border:1px solid #ded7ce;
+  padding:30px 22px;
+  text-align:center;
+  background:white;
+}
+
+.trust-card .symbol {
+  font-size:30px;
+  margin-bottom:17px;
+}
+
+.trust-card h3 {
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.trust-card p {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.hours {
+  background:#eee8df;
+}
+
+.hours-box {
+  max-width:700px;
+  margin:auto;
+  padding:30px;
+  background:white;
+}
+
+.hours-row {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:14px 0;
+  border-bottom:1px solid #e6dfd5;
+  font-size:14px;
+}
+
+.hours-row:last-child { border:0; }
+
+.special {
+  background:var(--black);
+  color:white;
+  text-align:center;
+}
+
+.special h2 {
+  font-size:clamp(35px,5vw,55px);
+  margin-bottom:20px;
+}
+
+.special p {
+  max-width:600px;
+  margin:0 auto 25px;
+  color:#cfc5b9;
+  font-size:14px;
+}
+
+.booking {
+  background:#e8e0d4;
+}
+
+.booking-form {
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.field label {
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width:100%;
+  padding:14px;
+  border:1px solid #d8d1c8;
+  border-radius:0;
+  background:white;
+  font-size:14px;
+}
+
+.field textarea {
+  height:105px;
+  resize:vertical;
+}
+
+.full { grid-column:1/-1; }
+
+.booking-form .btn { width:100%; }
+
+.form-note {
+  grid-column:1/-1;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.contact {
+  background:#27221e;
+  color:white;
+  text-align:center;
+}
+
+.contact h2 {
+  font-size:clamp(35px,5vw,54px);
+  margin-bottom:17px;
+}
+
+.contact p {
+  font-size:13px;
+  color:#d1c6b9;
+  margin-bottom:12px;
+}
+
+.contact a { color:var(--gold); }
+
+.float-book {
+  position:fixed;
+  right:16px;
+  bottom:17px;
+  z-index:30;
+  background:#187b4c;
+  color:white;
+  padding:13px 17px;
+  border-radius:35px;
+  font-size:12px;
+  font-weight:700;
+  box-shadow:0 5px 20px #0004;
+}
+
+footer {
+  padding:35px 7%;
+  background:#15120f;
+  color:#bcb0a3;
+  text-align:center;
+  font-size:11px;
+}
+
+footer p { margin-top:10px; }
+
+@keyframes rise {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:850px) {
+  header {
+    flex-direction:column;
+    padding:17px 5%;
+    gap:17px;
+  }
+
+  .logo { font-size:21px; }
+
+  nav {
+    justify-content:center;
+    gap:12px;
+    font-size:10px;
+  }
+
+  .nav-book { padding:8px 10px; }
+
+  section { padding:65px 6%; }
+
+  .hero h1 { font-size:48px; }
+
+  .intro {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .intro img { height:320px; }
+
+  .service-grid,
+  .trust-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+
+  .gallery-item img { height:200px; }
+
+  .comparison { height:300px; }
+
+  .booking-form {
+    grid-template-columns:1fr;
+    padding:22px;
+  }
+}
+
+@media(max-width:500px) {
+  .service-grid,
+  .trust-grid {
+    grid-template-columns:1fr;
+  }
+
+  .price-list { padding:15px; }
+
+  .price-row { font-size:12px; }
+
+  .price-row strong { font-size:11px; }
+
+  .float-book { font-size:10px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .hero-content { animation:none; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="demo">
+  Independent fictional salon concept by NovaWeb Atelier26.
+  Prices and hours are illustrative, not a real business quotation.
+</div>
+
+<header>
+  <a href="#home" class="logo">
+    VELVET & BLADE
+    <span>UNISEX HAIR STUDIO</span>
+  </a>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#prices">PRICES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#booking" class="nav-book">BOOK NOW</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- CINEMATIC HOMEPAGE -->
+
+<section class="hero" id="home">
+
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85"
+    aria-hidden="true">
+
+    <source src="hero.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">THE ART OF LOOKING GOOD</div>
+
+    <h1>Welcome to<br><em>Velvet & Blade</em></h1>
+
+    <p>ONE STUDIO. EVERY STYLE. EVERYONE.</p>
+
+    <div class="hero-actions">
+      <a href="#services" class="btn">EXPLORE OUR SERVICES</a>
+      <a href="#booking" class="btn btn-outline">BOOK YOUR LOOK</a>
+    </div>
+
+  </div>
+
+  <div class="scroll">SCROLL TO EXPLORE ↓</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+  <img
+    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
+    alt="Illustrative modern salon interior"
+    loading="lazy">
+
+  <div>
+    <div class="eyebrow">MORE THAN A HAIRCUT</div>
+
+    <h2>Where Confidence Meets Style.</h2>
+
+    <p>
+      A premium unisex hair studio concept created for everyone
+      who values great hair, personal expression and a welcoming
+      salon experience.
+    </p>
+
+    <p>
+      From precision fades and beard grooming to beautiful
+      braids, wigs, natural hair and special occasion styling,
+      Velvet & Blade brings every look together.
+    </p>
+
+    <a href="#prices" class="btn">VIEW OUR PRICE GUIDE →</a>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="heading">
+    <div class="eyebrow">THE VELVET & BLADE EXPERIENCE</div>
+    <h2>Services For Every Style.</h2>
+    <p>
+      One destination for cuts, grooming, braiding,
+      protective styling and special occasions.
+    </p>
+  </div>
+
+  <div class="service-grid">
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=85"
+        alt="Barber styling"
+        loading="lazy">
+      <div>
+        <h3>For Him</h3>
+        <p>Fades, buzz cuts, line-ups, beard grooming, colour and dreadlocks.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=85"
+        alt="Women's beauty styling"
+        loading="lazy">
+      <div>
+        <h3>For Her</h3>
+        <p>Braids, wigs, weaves, natural hair, treatments and styling.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=85"
+        alt="Illustrative special occasion beauty"
+        loading="lazy">
+      <div>
+        <h3>Kids & Bridal</h3>
+        <p>Children's styling and beautiful looks for special occasions.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=700&q=85"
+        alt="Illustrative hair products"
+        loading="lazy">
+      <div>
+        <h3>Hair Care</h3>
+        <p>Showcase treatments, extensions and salon products.</p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- COMPLETE PRICE LIST -->
+
+<section class="prices" id="prices">
+
+  <div class="heading">
+    <div class="eyebrow">TRANSPARENT STYLE GUIDE</div>
+    <h2>Our Price Menu.</h2>
+    <p>
+      Explore example 2026 price ranges in South African rand.
+      Select a category to view its services.
+    </p>
+  </div>
+
+  <div class="price-tabs">
+    <button class="tab active" data-price="men" type="button">FOR HIM</button>
+    <button class="tab" data-price="women" type="button">FOR HER</button>
+  </div>
+
+  <div class="price-panel active" id="men">
+
+    <div class="price-list">
+      <div class="price-row"><span>Chiskop / Buzz Cut</span><strong>R60 – R80</strong></div>
+      <div class="price-row"><span>Fade (Low / Mid / High)</span><strong>R100 – R150</strong></div>
+      <div class="price-row"><span>Fade + Beard Trim</span><strong>R130 – R180</strong></div>
+      <div class="price-row"><span>Afro Cut + Shape</span><strong>R80 – R100</strong></div>
+      <div class="price-row"><span>Afro + Dye / Tint</span><strong>R150 – R220</strong></div>
+      <div class="price-row"><span>Line-up / Edge Up Only</span><strong>R40 – R60</strong></div>
+      <div class="price-row"><span>Beard Trim / Shave</span><strong>R50 – R80</strong></div>
+      <div class="price-row"><span>Cut + Wash</span><strong>R120 – R160</strong></div>
+      <div class="price-row"><span>Dreadlocks – Starter</span><strong>R250 – R400</strong></div>
+      <div class="price-row"><span>Dreadlocks – Retwist / Relock</span><strong>R180 – R300</strong></div>
+      <div class="price-row"><span>Dreadlocks – Wash + Twist + Style</span><strong>R250 – R350</strong></div>
+      <div class="price-row"><span>S-Curl / Texturizer</span><strong>R150 – R250</strong></div>
+      <div class="price-row"><span>Hair Dye / Colour for Men</span><strong>R120 – R200</strong></div>
+      <div class="price-row"><span>Kids Cut (Under 12)</span><strong>R50 – R70</strong></div>
+    </div>
+
+  </div>
+
+  <div class="price-panel" id="women">
+
+    <div class="price-list">
+      <div class="price-row"><span>Wash + Blow</span><strong>R80 – R120</strong></div>
+      <div class="price-row"><span>Relaxer + Wash + Blow</span><strong>R180 – R280</strong></div>
+      <div class="price-row"><span>Cornrows / Lines (No Extensions)</span><strong>R120 – R200</strong></div>
+      <div class="price-row"><span>Cornrows with Extensions</span><strong>R250 – R450</strong></div>
+      <div class="price-row"><span>Box Braids – Short</span><strong>R350 – R550</strong></div>
+      <div class="price-row"><span>Box Braids – Long / Jumbo</span><strong>R450 – R750</strong></div>
+      <div class="price-row"><span>Knotless Braids</span><strong>R450 – R800</strong></div>
+      <div class="price-row"><span>Fulani / Tribal Braids</span><strong>R400 – R700</strong></div>
+      <div class="price-row"><span>Weave – Sew In (Without Hair)</span><strong>R300 – R500</strong></div>
+      <div class="price-row"><span>Weave – Bonding</span><strong>R200 – R350</strong></div>
+      <div class="price-row"><span>Wig Install – Glueless</span><strong>R250 – R400</strong></div>
+      <div class="price-row"><span>Wig Install – Glue + Melt + Style</span><strong>R350 – R550</strong></div>
+      <div class="price-row"><span>Dreadlocks – Sisterlocs Retie</span><strong>R300 – R600</strong></div>
+      <div class="price-row"><span>Natural – Twist / Bantu Knots</span><strong>R150 – R250</strong></div>
+      <div class="price-row"><span>Natural – Afro Wash + Treatment</span><strong>R120 – R200</strong></div>
+      <div class="price-row"><span>Pondo / Straight Up + Down</span><strong>R300 – R500</strong></div>
+      <div class="price-row"><span>Hair Treatment + Steaming</span><strong>R100 – R180</strong></div>
+      <div class="price-row"><span>Bridal / Matric Dance Style</span><strong>R400 – R800</strong></div>
+      <div class="price-row"><span>Kids Braids</span><strong>R150 – R300</strong></div>
+    </div>
+
+  </div>
+
+  <p class="price-note">
+    Price depends on hair length, extensions and labour.
+    WhatsApp your hair photo for an exact quote when booking
+    with a real salon. All prices above are illustrative.
+  </p>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+  <div class="heading">
+    <div class="eyebrow">THE LOOKBOOK</div>
+    <h2>Find Your Next Look.</h2>
+    <p>
+      Explore our visual inspiration gallery.
+      Select a category to filter the images.
+    </p>
+  </div>
+
+  <div class="gallery-tabs">
+    <button class="tab active" data-gallery="all" type="button">ALL</button>
+    <button class="tab" data-gallery="male" type="button">MALE</button>
+    <button class="tab" data-gallery="female" type="button">FEMALE</button>
+    <button class="tab" data-gallery="kids" type="button">KIDS</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <figure class="gallery-item" data-category="male">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=85" alt="Barber inspiration" loading="lazy">
+      <span>Precision Grooming</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="male">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=85" alt="Barber tools and styling" loading="lazy">
+      <span>Barber Experience</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="male">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=85" alt="Men's grooming inspiration" loading="lazy">
+      <span>Fresh Cuts</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=85" alt="Beauty styling inspiration" loading="lazy">
+      <span>Signature Styling</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=85" alt="Hair styling inspiration" loading="lazy">
+      <span>Beautiful Hair</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=85" alt="Professional hair styling" loading="lazy">
+      <span>Salon Finish</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=700&q=85" alt="Hair care products" loading="lazy">
+      <span>Hair Care</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85" alt="Hair beauty inspiration" loading="lazy">
+      <span>Style Inspiration</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="female">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=85" alt="Luxury salon environment" loading="lazy">
+      <span>Studio Experience</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="kids">
+      <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=700&q=85" alt="Children's style inspiration" loading="lazy">
+      <span>Little Stars</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="kids">
+      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=700&q=85" alt="Family-friendly inspiration" loading="lazy">
+      <span>Family Friendly</span>
+    </figure>
+
+    <figure class="gallery-item" data-category="kids">
+      <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=85" alt="Children's inspiration" loading="lazy">
+      <span>Kids & Style</span>
+    </figure>
+
+  </div>
+
+  <p style="font-size:11px;text-align:center;color:#777;margin-top:20px">
+    Illustrative stock photographs. These are not actual
+    customer results or photographs of Velvet & Blade clients.
+  </p>
+
+</section>
+
+<!-- BEFORE AND AFTER -->
+
+<section class="compare-section" id="transformation">
+
+  <div class="heading">
+    <div class="eyebrow">THE TRANSFORMATION EXPERIENCE</div>
+    <h2>Every Detail Matters.</h2>
+    <p>
+      Drag the slider to explore this interactive
+      portfolio feature.
+    </p>
+  </div>
+
+  <div class="comparison" id="comparison">
+
+    <img
+      src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=85"
+      alt="Illustrative salon image">
+
+    <img
+      class="before"
+      src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1100&q=85"
+      alt="Alternative illustrative salon image">
+
+    <span class="tag tag-before">IMAGE A</span>
+    <span class="tag tag-after">IMAGE B</span>
+
+    <div class="line"></div>
+    <div class="handle">↔</div>
+
+    <input
+      id="compareRange"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      aria-label="Compare two illustrative salon photographs">
+
+  </div>
+
+  <p class="compare-note">
+    Demonstration slider using two unrelated illustrative images,
+    not a genuine before-and-after client transformation.
+    Real salon photographs can replace these with permission.
+  </p>
+
+</section>
+
+<!-- TRUST -->
+
+<section id="why-us">
+
+  <div class="heading">
+    <div class="eyebrow">THE STUDIO STANDARD</div>
+    <h2>Style With Confidence.</h2>
+    <p>
+      The information a professional salon can share to help
+      customers feel comfortable before their appointment.
+    </p>
+  </div>
+
+  <div class="trust-grid">
+
+    <div class="trust-card">
+      <div class="symbol">✂️</div>
+      <h3>Precision & Care</h3>
+      <p>
+        Showcase the salon team's actual experience,
+        qualifications and styling specialties.
+      </p>
+    </div>
+
+    <div class="trust-card">
+      <div class="symbol">✨</div>
+      <h3>Clean Tools</h3>
+      <p>
+        Explain verified hygiene practices, blade replacement
+        and equipment cleaning procedures.
+      </p>
+    </div>
+
+    <div class="trust-card">
+      <div class="symbol">♡</div>
+      <h3>Everyone Welcome</h3>
+      <p>
+        An inclusive concept for men's grooming,
+        women's styling and children's hair care.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOURS -->
+
+<section class="hours" id="hours">
+
+  <div class="heading">
+    <div class="eyebrow">PLAN YOUR VISIT</div>
+    <h2>Opening Hours.</h2>
+    <p>
+      Example studio schedule.
+      Actual opening hours must be confirmed by a salon owner.
+    </p>
+  </div>
+
+  <div class="hours-box">
+    <div class="hours-row">
+      <span>Monday – Saturday</span>
+      <strong>08:00 – 19:00</strong>
+    </div>
+
+    <div class="hours-row">
+      <span>Sunday</span>
+      <strong>09:00 – 16:00</strong>
+    </div>
+
+    <div class="hours-row">
+      <span>Appointments</span>
+      <strong>Preferred</strong>
+    </div>
+
+    <div class="hours-row">
+      <span>Walk-ins</span>
+      <strong>Subject to availability</strong>
+    </div>
+  </div>
+
+</section>
+
+<!-- SPECIALS -->
+
+<section class="special">
+
+  <div class="eyebrow">YOUR NEXT LOOK STARTS HERE</div>
+
+  <h2>Fresh Hair. Fresh Confidence.</h2>
+
+  <p>
+    This space can showcase real monthly promotions,
+    loyalty rewards and seasonal styling packages
+    once approved by the salon owner.
+  </p>
+
+  <a href="#booking" class="btn">ENQUIRE ABOUT AN APPOINTMENT →</a>
+
+</section>
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+  <div class="heading">
+    <div class="eyebrow">BOOK YOUR LOOK</div>
+    <h2>Your Style Starts Here.</h2>
+    <p>
+      Select your preferred service, date and time
+      to preview a booking enquiry.
+    </p>
+  </div>
+
+  <form class="booking-form" id="bookingForm">
+
+    <div class="field">
+      <label for="clientName">FULL NAME</label>
+      <input id="clientName" type="text" required placeholder="Your full name">
+    </div>
+
+    <div class="field">
+      <label for="clientEmail">EMAIL ADDRESS</label>
+      <input id="clientEmail" type="email" required placeholder="you@example.com">
+    </div>
+
+    <div class="field">
+      <label for="service">SELECT SERVICE</label>
+      <select id="service" required>
+        <option value="">Choose a service</option>
+        <option>Men – Fade / Haircut</option>
+        <option>Men – Beard Grooming</option>
+        <option>Men – Dreadlocks</option>
+        <option>Women – Braids</option>
+        <option>Women – Wig Installation</option>
+        <option>Women – Weave</option>
+        <option>Women – Natural Hair</option>
+        <option>Women – Treatment</option>
+        <option>Kids – Haircut / Braids</option>
+        <option>Bridal / Matric Styling</option>
+        <option>Other – Please Quote</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="appointmentDate">PREFERRED DATE</label>
+      <input id="appointmentDate" type="date" required>
+    </div>
+
+    <div class="field">
+      <label for="appointmentTime">PREFERRED TIME</label>
+      <select id="appointmentTime" required>
+        <option value="">Select a time</option>
+        <option>08:00</option>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+        <option>18:00</option>
+      </select>
+    </div>
+
+    <div class="field full">
+      <label for="notes">STYLE DETAILS / SPECIAL REQUESTS</label>
+      <textarea id="notes" placeholder="Describe the style you want, your hair length or any special requests..."></textarea>
+    </div>
+
+    <div class="full">
+      <button class="btn" type="submit">
+        PREVIEW BOOKING ENQUIRY →
+      </button>
+    </div>
+
+    <p class="form-note">
+      Portfolio demonstration only. No information is sent,
+      no appointment is reserved and no payment is collected.
+      A real salon's approved booking WhatsApp number can be
+      connected later.
+    </p>
+
+  </form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="eyebrow">COME FIND YOUR STYLE</div>
+
+  <h2>Visit Velvet & Blade.</h2>
+
+  <p>Thabazimbi-inspired fictional salon concept, South Africa.</p>
+
+  <p>Exact address: To be supplied by the future salon owner.</p>
+
+  <p>Bookings and enquiries: Contact details to be confirmed.</p>
+
+  <p>
+    Instagram and TikTok profiles can be linked once
+    the actual business accounts are supplied.
+  </p>
+
+  <a href="#booking" class="btn" style="margin-top:20px;color:#171513">
+    PLAN YOUR APPOINTMENT →
+  </a>
+
+</section>
+
+</main>
+
+<!-- FLOATING BOOKING BUTTON -->
+
+<a href="#booking" class="float-book">
+  ◉ Send Hair Photo + Get Quote
+</a>
+
+<footer>
+
+  <div class="logo" style="color:white">
+    VELVET & BLADE
+    <span>UNISEX HAIR STUDIO</span>
+  </div>
+
+  <p>One Studio. Every Style. Everyone.</p>
+
+  <p>
+    Fictional website concept designed by NovaWeb Atelier26.
+  </p>
+
+  <p>
+    © <span id="year"></span> Velvet & Blade.
+    Demonstration only.
+  </p>
+
+</footer>
+
+<script>
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+/* PRICE CATEGORY TABS */
+
+const priceButtons =
+  document.querySelectorAll("[data-price]");
+
+priceButtons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    priceButtons.forEach(item =>
+      item.classList.remove("active")
+    );
+
+    document.querySelectorAll(".price-panel")
+      .forEach(panel => panel.classList.remove("active"));
+
+    button.classList.add("active");
+
+    document.getElementById(button.dataset.price)
+      .classList.add("active");
+
+  });
+});
+
+
+/* GALLERY FILTER */
+
+const galleryButtons =
+  document.querySelectorAll("[data-gallery]");
+
+const galleryItems =
+  document.querySelectorAll(".gallery-item");
+
+galleryButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    galleryButtons.forEach(item =>
+      item.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    const selected = button.dataset.gallery;
+
+    galleryItems.forEach(item => {
+
+      const show =
+        selected === "all" ||
+        item.dataset.category === selected;
+
+      item.classList.toggle("hidden", !show);
+
+    });
+
+  });
+
+});
+
+
+/* IMAGE COMPARISON SLIDER */
+
+const comparison =
+  document.getElementById("comparison");
+
+const compareRange =
+  document.getElementById("compareRange");
+
+compareRange.addEventListener("input", () => {
+
+  comparison.style.setProperty(
+    "--position",
+    compareRange.value + "%"
+  );
+
+});
+
+
+/* BOOKING DEMONSTRATION */
+
+const appointmentDate =
+  document.getElementById("appointmentDate");
+
+const today = new Date();
+
+const localToday = [
+  today.getFullYear(),
+  String(today.getMonth() + 1).padStart(2,"0"),
+  String(today.getDate()).padStart(2,"0")
+].join("-");
+
+appointmentDate.min = localToday;
+
+document.getElementById("bookingForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("clientName").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+    const date =
+      appointmentDate.value;
+
+    const time =
+      document.getElementById("appointmentTime").value;
+
+    const day = new Date(date + "T12:00:00").getDay();
+
+    if (day === 0 && (time < "09:00" || time > "15:00")) {
+      alert("Please choose a Sunday start time between 09:00 and 15:00.");
+      return;
+    }
+
+    alert(
+      "VELVET & BLADE — DEMO BOOKING\n\n" +
+      "Name: " + name +
+      "\nService: " + service +
+      "\nPreferred date: " + date +
+      "\nPreferred time: " + time +
+      "\n\nThis is a preview only." +
+      "\nNo real appointment has been made."
+    );
+
+  });
+</script>
+
+</body>
+</html>
